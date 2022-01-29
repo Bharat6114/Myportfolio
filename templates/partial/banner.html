@@ -1,0 +1,40 @@
+{% load static %}
+<section class="home_banner_area">
+    <div class="container box_1620">
+        <div class="banner_inner d-flex align-items-center">
+         <div class="banner_content">
+             
+            <div class="media">
+                {% for data in datas %}
+                <div class="d-flex" >
+                     <img src="{{data.pic.url}}" alt="">
+                 
+                 </div>
+                 
+                 <div class="media-body">
+                     <div class="personal_text">
+                         <h6>Hello Everybody, i am</h6>
+                         
+                         <h3>{{data.name}}</h3>
+                         <h4>{{data.post}}</h4>
+
+                         <ul class="list basic_info">
+                             <li><a href="#"><i class="lnr lnr-calendar-full"></i>{{data.dob}}</a></li>
+                             <li><a href="tel:{{data.phone_no}}"><i class="lnr lnr-phone-handset"></i> {{data.phone_no}}</a></li>
+                             <li><a href="mailto:bharatbhandari5123@gmail.com" target="_blank"><i class="lnr lnr-envelope"></i>{{data.email}}</a></li>
+                             <li><a href="#"><i class="lnr lnr-home"></i> {{data.address}}</a></li>
+                         </ul>
+                         
+                         <ul class="list personal_social">
+                             <li><a href="{{data.fb_address}}" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                             <li><a href="{{data.insta_address}}" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                             <li><a href="{{data.github_id}}" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                         </ul>
+                     </div>
+                 </div>
+                 {% endfor %}
+             </div>
+         </div>
+     </div>
+ </div>
+</section>
