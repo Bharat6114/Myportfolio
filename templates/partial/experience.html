@@ -1,0 +1,77 @@
+{%load static %}
+<style>
+#customers {
+	font-family: Arial, Helvetica, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+    text-align: justify;
+  }
+  
+  #customers td, #customers th {
+	border: 1px solid #ddd;
+	padding: 8px;
+  }
+  
+  #customers tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #customers tr:hover {background-color: #ddd;}
+  
+  #customers th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: #04AA6D;
+	color: white;
+  }
+</style>
+<section class="mytabs_area p_120">
+    <div class="container">
+        <div class="tabs_inner">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" 
+                    href="#home" role="tab" aria-controls="home" 
+                    aria-selected="true">My Experiences</a>
+                
+                </li>
+                <div class="table" style="margin-top:50px;">
+                    
+                    <table id="customers" >
+
+                        <tr>
+                          <th>Sn</th>
+                          <th>Post</th>
+                          <th>Company Name</th>
+                          <th>Company Adress</th>
+                          <th>From</th>
+                          <th>To</th>
+                          <th>Period</th>
+                        </tr>
+                    {% for experience in myexperience %}
+
+                        <tr>
+                          <td>{{experience.id}}</td>
+                          <td>{{experience.post}}</td>
+                          <td>{{experience.name_of_company}}</td>
+                          <td>{{experience.address_of_company}}</td>
+                          <td>{{experience.startdate}}</td>
+                          <td>{{experience.enddate}}</td>
+                          <td>{{experience.years}} years</td>
+
+                        </tr>
+                        {% empty %}
+                        <h2>Currently i have no working experience.</h2>
+                  
+                        {% endfor %}
+                        
+                      </table>
+                      
+                  </div>   
+                
+            </ul>
+            <div class="tab-content" id="myTabContent">
+               
+            </div>
+        </div>
+    </div>
+</section>

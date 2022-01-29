@@ -1,0 +1,34 @@
+{%load static %}
+<section class="home_gallery_area p_120">
+    <div class="container">
+        <div class="main_title">
+            <h2>My works</h2>
+            <p>Following are my project for learning and practic purpose</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="gallery_f_inner row imageGallery1">
+            {% for r in all_datas %}
+            <div class="col-lg-4 col-md-4 col-sm-6 brand manipul design print">
+                <div class="h_gallery_item">
+                    <div class="g_img_item">
+                        <img class="img-fluid" src="{{r.project_image.url}}" alt="">
+                        <a class="light" href="{{r.project_image.url}}"></a>
+                    </div>
+                    <div class="g_item_text" >
+
+                        <h4>{{r.project_name}}</h4>
+                        <p>{{r.language_used}}<br>
+                            {{r.project_type}}<br>
+                        {{r.project_description}}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            
+        </div>
+        <div class="more_btn">
+            <a class="main_btn" href="{% url 'projects' %}">Load More Items</a>
+        </div>
+    </div>
+</section>
